@@ -14,9 +14,28 @@ $.ajax({
 });
 
 function printResult(datas) {
-    console.log(datas);
+    
+    var Html = "<h3>Citações favoritas de {{name}}</h3><ol>{{#each quotes}}<li>{{quote}}{{/each}}</ol>{{{bio}}}<br>"
+    var template = Handlebars.compile(Html);
+    
+    var HtmlContent = template({
+        name: datas.name,
+        quotes: getItems(datas.citations),
+        bio: datas.bio
+
+    });
+
+    $("#contentData").html(HtmlContent);
+
 }
 
+function getItems(items) {
+    var quotes = [];
+    for (var i = 0; i < items.length; i++) {
+        quotes.push({ quote: items[i].citation })
+    }
+    return quotes;
+}
 
 // var quotesTemplate = "<h3>Citações favoritas de {{ name }}</h3><ol>{{#each quotes}}<li>{{quote}}{{/each}}</ol>{{{bio}}}<br>{{ createLink 'Custom Link' 'https://www.google.com.br/' }}";
 // var template = Handlebars.compile(quotesTemplate);
@@ -25,7 +44,7 @@ function printResult(datas) {
 //     text = Handlebars.Utils.escapeExpression(text);
 //     href = Handlebars.Utils.escapeExpression(href);
 //     var theHref = "<a href = " + href + ">" + text + "</a>";
-//     return new Handlebars.SafeString(theHref); 
+//     return new Handlebars.SafeString(theHref);
 // });
 
 // var quoteData = template({

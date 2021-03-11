@@ -8,6 +8,8 @@
 <div id="contentData" data-route="{{ route('citation.content') }}"></div>
 
 
+
+
 @endsection
 
 @section('js')
