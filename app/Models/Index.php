@@ -26,4 +26,9 @@ class Index extends Model
     {
         return $this->hasMany(Citation::class, 'index_id');
     }
+
+    public function posts()
+    {
+        return $this->hasMany(Posts::class, 'index_id');
+    }
 }

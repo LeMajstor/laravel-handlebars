@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
         // Call Seeders
         $this->call([
             IndexSeeder::class,
-            CitationSeeder::class
+            CitationSeeder::class,
+            PostSeeder::class
         ]);
     }
 }

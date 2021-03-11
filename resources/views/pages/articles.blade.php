@@ -5,11 +5,11 @@
 @section('content')
     
 <!-- Main Content -->
-<div id="contentData" data-route="{{ route('index.content') }}"></div>
+<div id="contentData" data-route="{{ route('article.content') }}"></div>
 
 @endsection
 
 @section('js')
     <!-- index.js -->
-    <script src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/articles.js') }}"></script>
 @endsection
