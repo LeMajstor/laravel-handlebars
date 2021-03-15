@@ -28,4 +28,5 @@ Route::get('/citations/content', [CitationController::class, 'content'])->name('
 Route::get('/articles', [PostsController::class, 'index']);
 Route::get('/articles/content', [PostsController::class, 'content'])->name('article.content');
 
-Route::get('/articles/{id}', [PostsController::class, 'show'])->name('post.show');
+Route::get('/post/{id}', [PostsController::class, 'show']);
+Route::get('/post/content/{id}', [PostsController::class, 'postContent'])->name('post.content');

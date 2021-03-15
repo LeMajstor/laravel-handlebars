@@ -28,6 +28,15 @@ class PostSeeder extends Seeder
         return $content;
     }
 
+    public static function title()
+    {
+        $content = self::generate(
+            $options = array(1, 'short', 'plaintext')
+        );
+
+        return $content;
+    }
+
     public static function description()
     {
         $content = self::generate(
@@ -58,7 +67,7 @@ class PostSeeder extends Seeder
 
             $post = new Posts;
 
-            $post->title = "Lorem Ipsum";
+            $post->title = self::title();
             $post->description = self::description();
             $post->content = self::content();
 

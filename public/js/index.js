@@ -1,5 +1,3 @@
-// Get Url Base for AJAX
-var baseUrl = $("#contentData").data("route");
 
 // Manage Handlebars for displaying results
 function printResult(datas) {
